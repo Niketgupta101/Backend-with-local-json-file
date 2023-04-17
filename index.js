@@ -29,6 +29,7 @@ process.on("unhandledRejection", (reason) => {
 });
 
 process.on("uncaughtException", (error) => {
+  console.log({error});
   errorHandler.handleError(error);
   if (!errorHandler.isTrustedError(error)) {
     process.exit(1);
@@ -36,6 +37,7 @@ process.on("uncaughtException", (error) => {
 });
 
 app.use(async (err, req, res, next) => {
+  console.log({err});
   if (!errorHandler.isTrustedError(err)) {
     next(err);
   }

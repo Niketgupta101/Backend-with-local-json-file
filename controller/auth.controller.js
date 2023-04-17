@@ -19,18 +19,18 @@ export const signin = async (req, res, next) => {
         const user = userList.find((user) => user.email === email);
 
         if(!user)
-        res.status(404).json({ success: false, message: 'User not found!!'});
+        return res.status(404).json({ success: false, message: 'User not found!!'});
 
         const matchPassword = await bcrypt.compare(password, user.password);
 
         if(!matchPassword)
-        res.status(400).json({ success: false, message: 'Incorrect Credentials!!'});
+        return res.status(400).json({ success: false, message: 'Incorrect Credentials!!'});
 
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
 
         res.cookie('accessToken', token, { httpOnly: true });
 
-        res.status(201).json({ success: true, user, token });
+        return res.status(201).json({ success: true, user, token });
     } catch (error) {
         return next(error);
     }

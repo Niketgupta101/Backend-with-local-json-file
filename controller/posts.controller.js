@@ -18,7 +18,7 @@ export const fetchAllPosts = async (req, res, next) => {
   try {
     const posts = await readPosts();
 
-    res.status(201).json({ success: true, posts });
+    return res.status(201).json({ success: true, posts });
   } catch (error) {
     return next(error);
   }
@@ -40,7 +40,7 @@ export const createPost = async (req, res, next) => {
 
     await savePosts(posts);
 
-    res.status(201).json({ success: true, posts });
+    return res.status(201).json({ success: true, posts });
   } catch (error) {
     return next(error);
   }

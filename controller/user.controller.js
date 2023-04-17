@@ -31,7 +31,7 @@ export const createUser = async (req, res, next) => {
 
         await writeFile(userList);
 
-        res.status(201).json({ success: true });
+        return res.status(201).json({ success: true });
     } catch (error) {
         return next(error);
     }
@@ -41,7 +41,7 @@ export const fetchAllUsers = async (req, res, next) => {
     try {
         const users = await readFile();
 
-        res.status(201).json({ success: true, users });
+        return res.status(201).json({ success: true, users });
     } catch (error) {
         return next(error);
     }
@@ -55,9 +55,9 @@ export const fetchUserById = async (req, user, next) => {
         const user = userList.find((user) => user.id === userId);
 
         if(!user)
-        res.status(404).json({ success: true, message: 'User not found!!!' });
+        return res.status(404).json({ success: true, message: 'User not found!!!' });
 
-        res.status(201).json({ success: true, user });
+        return res.status(201).json({ success: true, user });
     } catch (error) {
         return next(error);
     }
