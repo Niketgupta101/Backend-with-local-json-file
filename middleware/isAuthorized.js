@@ -28,7 +28,7 @@ export const isAuthorized = async (req, res, next) => {
     const userList = await readFile();
     const user = userList.find((user) => user.id === decoded.id);
 
-    if (!user) res.status(404).json({ success: false, message: "NOT FOUND!!" });
+    if (!user) return res.status(404).json({ success: false, message: "NOT FOUND!!" });
 
     req.user = user;
 
