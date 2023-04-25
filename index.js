@@ -8,7 +8,7 @@ import { errorHandler } from "./utils/error/errorHandler.js";
 
 const app = express();
 
-import * as cors from "cors";
+import cors from "cors";
 app.use(cors());
 
 app.use(helmet());
