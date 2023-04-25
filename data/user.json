@@ -1,8 +1,1 @@
-[
-  {
-    "name": "Random user 1",
-    "email": "randomuser1@gmail.com",
-    "password": "$2a$10$Q1qkFzZFUckwG0EDKSPwrODKrWPAftPnQFS/ihliqn7f6f9wH6Fte",
-    "id": "41c8dae2-bb11-4cf4-8bc1-7d3bb5b870b3"
-  }
-]
+[{"name":"Random user 1","email":"randomuser1@gmail.com","password":"$2a$10$Q1qkFzZFUckwG0EDKSPwrODKrWPAftPnQFS/ihliqn7f6f9wH6Fte","id":"41c8dae2-bb11-4cf4-8bc1-7d3bb5b870b3"},{"name":"Random user 2","email":"randomuser2@gmail.com","password":"$2a$10$90DfBx.xCoo264IdQ2pBfeRKQHvQ913hisl7bn00R5R4hCugj8XdK","id":"619ad1c8-77ce-4a3c-b1a1-d7b51c0bc892"}]
